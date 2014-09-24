@@ -1,0 +1,29 @@
+<div class="col-xs-4 col-xs-offset-4">
+
+	<h1>Sign In</h1>
+
+	<form role="form" action="/session" method="post">
+		
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input 
+				id="username"
+				name="user[username]"
+				class="form-control"
+				type="text">
+		</div>
+			
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input 
+				id="password"
+				name="user[password]"
+				class="form-control"
+				type="password">
+		</div>
+		
+		<input type="submit" value="Submit" class="btn btn-primary">
+	</form>
+</div>
