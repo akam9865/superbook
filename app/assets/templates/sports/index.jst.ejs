@@ -1,0 +1,12 @@
+<h3>sports</h3>
+  
+
+<ul class="list-group col-xs-2">
+  
+  <% sports.each( function (sport) { %>
+  
+    <li class="list-group-item"><%= sport.escape("name") %></li>
+  
+  <% }) %>
+
+</ul>
