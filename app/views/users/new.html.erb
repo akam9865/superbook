@@ -1,8 +1,29 @@
-<h1>Sign Up</h1>
+<div class="col-xs-4 col-xs-offset-4">
 
-<form action="/users" method="post">
-	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-	<label>Username<input name="user[username]" type="text"></label>
-	<label>Password<input name="user[password]" type="password"></label>
-	<input type="submit" value="Submit" class="btn btn-primary">
-</form>
+	<h1>Sign Up</h1>
+
+	<form role="form" action="/users" method="post">
+		
+		<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+
+		<div class="form-group">
+			<label for="username">Username</label>
+			<input 
+				id="username"
+				name="user[username]"
+				class="form-control"
+				type="text">
+		</div>
+			
+		<div class="form-group">
+			<label for="password">Password</label>
+			<input 
+				id="password"
+				name="user[password]"
+				class="form-control"
+				type="password">
+		</div>
+		
+		<input type="submit" value="Submit" class="btn btn-primary">
+	</form>
+</div>

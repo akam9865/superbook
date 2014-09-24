@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u1 = User.create({ username: "kylesmith1", password: "password", bankroll: 1000000.00 })
-u2 = User.create({ username: "mayweather", password: "password", bankroll: 1000000000.00 })
-u3 = User.create({ username: "dbilzerian", password: "password", bankroll: 1000000000000.00 })
+u1 = User.create({ username: "kylesmith1", password: "jkl;'", bankroll: 1000000.00 })
+u2 = User.create({ username: "mayweather", password: "jkl;'", bankroll: 1000000000.00 })
+u3 = User.create({ username: "dbilzerian", password: "jkl;'", bankroll: 1000000000000.00 })
 
 
 s1 = Sport.create({ name: "Baseball" })
@@ -33,21 +33,21 @@ t13 = Team.create({ name: "Packers", city: "Green Bay", sport_id: 2 })
 t14 = Team.create({ name: "Steelers", city: "Pittsburgh", sport_id: 2 })
 t15 = Team.create({ name: "Broncos", city: "Denver", sport_id: 2 })
 
-t16 = Team.create({ name: "Warriors", city: "San Francisco", sport_id: 3 })
+t16 = Team.create({ name: "Warriors", city: "Golden State", sport_id: 3 })
 t17 = Team.create({ name: "Cavaliers", city: "Cleveland", sport_id: 3 })
 t18 = Team.create({ name: "Lakers", city: "Los Angeles", sport_id: 3 })
 t19 = Team.create({ name: "Knicks", city: "New York", sport_id: 3 })
 t20 = Team.create({ name: "Bulls", city: "Chicago", sport_id: 3 })
 
 
-g1 = Game.create({ team1_id: 1, team2_id: 2, day_id: 1, odds: 1.5 })
-g2 = Game.create({ team1_id: 3, team2_id: 4, day_id: 1, odds: 1.1 })
+g1 = Game.create({ team1_id: 1, team2_id: 2, day_id: 1, odds: 1.5, sport_id: 1 })
+g2 = Game.create({ team1_id: 3, team2_id: 4, day_id: 1, odds: 1.1, sport_id: 1 })
 
-g3 = Game.create({ team1_id: 9, team2_id: 10, day_id: 1, odds: 2.2 })
-g4 = Game.create({ team1_id: 11, team2_id: 12, day_id: 2, odds: 1.5 })
+g3 = Game.create({ team1_id: 9, team2_id: 10, day_id: 1, odds: 2.2, sport_id: 2 })
+g4 = Game.create({ team1_id: 11, team2_id: 12, day_id: 2, odds: 1.5, sport_id: 2 })
 
-g5 = Game.create({ team1_id: 16, team2_id: 20, day_id: 1, odds: 1.5 })
-g6 = Game.create({ team1_id: 17, team2_id: 19, day_id: 2, odds: 1.5 })
+g5 = Game.create({ team1_id: 16, team2_id: 20, day_id: 1, odds: 1.5, sport_id: 3 })
+g6 = Game.create({ team1_id: 17, team2_id: 19, day_id: 2, odds: 1.5, sport_id: 3 })
 
 
 d1 = Day.create({ user_id: 1 })

@@ -5,4 +5,9 @@ Superbook::Application.routes.draw do
   resources :users, only: [:create, :new]
   resource :session, only: [:create, :new, :destroy]
 
+
+  namespace :api, defaults: { format: :json } do
+    resources :sports, except: [:new, :edit]
+
+  end
 end

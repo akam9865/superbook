@@ -11,7 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924003011) do
+ActiveRecord::Schema.define(version: 20140924180325) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "days", force: true do |t|
     t.integer  "user_id"
@@ -19,7 +22,7 @@ ActiveRecord::Schema.define(version: 20140924003011) do
     t.datetime "updated_at"
   end
 
-  add_index "days", ["user_id"], name: "index_days_on_user_id"
+  add_index "days", ["user_id"], name: "index_days_on_user_id", using: :btree
 
   create_table "games", force: true do |t|
     t.integer  "team1_id",   null: false
@@ -29,11 +32,12 @@ ActiveRecord::Schema.define(version: 20140924003011) do
     t.integer  "winner_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "sport_id"
   end
 
-  add_index "games", ["day_id"], name: "index_games_on_day_id"
-  add_index "games", ["team1_id"], name: "index_games_on_team1_id"
-  add_index "games", ["team2_id"], name: "index_games_on_team2_id"
+  add_index "games", ["day_id"], name: "index_games_on_day_id", using: :btree
+  add_index "games", ["team1_id"], name: "index_games_on_team1_id", using: :btree
+  add_index "games", ["team2_id"], name: "index_games_on_team2_id", using: :btree
 
   create_table "sports", force: true do |t|
     t.string   "name",       null: false
@@ -49,7 +53,7 @@ ActiveRecord::Schema.define(version: 20140924003011) do
     t.datetime "updated_at"
   end
 
-  add_index "teams", ["sport_id"], name: "index_teams_on_sport_id"
+  add_index "teams", ["sport_id"], name: "index_teams_on_sport_id", using: :btree
 
   create_table "users", force: true do |t|
     t.text     "username",                                 null: false
