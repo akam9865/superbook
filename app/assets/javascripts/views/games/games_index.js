@@ -6,6 +6,7 @@ Superbook.Views.GamesIndex = Backbone.CompositeView.extend({
   },
   
   render: function () {
+    // this.$el.empty();
     var renderedContent = this.template({
       games: this.collection
     });

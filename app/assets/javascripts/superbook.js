@@ -20,13 +20,6 @@ window.Superbook = {
 };
 
 Backbone.CompositeView = Backbone.View.extend({
-  // addSubview: function (selector, view) {
-  //   var selectorSubviews =
-  //     this.subviews()[selector] || (this.subviews()[selector] = []);
-  //
-  //     selectorSubviews.push(view)
-  // },
-  
   addSubview: function (selector, subview) {
     this.subviews(selector).push(subview);
 
@@ -39,20 +32,7 @@ Backbone.CompositeView = Backbone.View.extend({
     subview.delegateEvents();
   },
   
-  // renderSubviews: function() {
-  //   var that = this;
-  //   _(this.subviews()).each(function (selectorSubviews, selector) {
-  //     var $selectorEl = view.$(selector);
-  //     $selectorEl.empty();
-  //     _(selectorSubviews).each(function (subview) {
-  //       $selectorEl.append(subview.render().$el);
-  //       subview.delegateEvents();
-  //     });
-  //   });
-  // },
-  
   subviews: function (selector) {
-
     this._subviews = this._subviews || {};
 
     if (!selector) {
@@ -64,17 +44,6 @@ Backbone.CompositeView = Backbone.View.extend({
   },
   
   attachSubviews: function () {
-    // I decided I didn't want a function that renders ALL the
-    // subviews together. Instead, I think:
-    //
-    // * The user of CompositeView should explicitly render the
-    //   subview themself when they build the subview object.
-    // * The subview should listenTo relevant events and re-render
-    //   itself.
-    //
-    // All that is necessary is "attaching" the subview `$el`s to the
-    // relevant points in the parent CompositeView.
-
     var view = this;
     _(this.subviews()).each(function (subviews, selector) {
       view.$(selector).empty();
@@ -84,11 +53,22 @@ Backbone.CompositeView = Backbone.View.extend({
     });
   },
   
+  remove: function () {
+    Backbone.View.prototype.remove.call(this);
+    _(this.subviews()).each(function (subviews) {
+      _(subviews).each(function (subview) { subview.remove(); });
+    });
+  },
+
+  removeSubview: function (selector, subview) {
+    subview.remove();
+
+    var subviews = this.subviews(selector);
+    subviews.splice(subviews.indexOf(subview), 1);
+  },
   
-  // subviews: function (){
-  //   if (!this._subviews) {
-  //     this._subviews = {};
-  //   }
-  //   return this._subviews;
-  // }
+  resetSubview: function (selector) {
+    var subviews = this.subviews();
+    delete subviews[selector];
+  }
 });
