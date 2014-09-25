@@ -2,7 +2,7 @@ module Api
   class SportsController < ApiController
     def index
       @sports = Sport.all
-      render json: @sports
+      render :index
     end
   end
 end

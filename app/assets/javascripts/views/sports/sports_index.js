@@ -6,8 +6,9 @@ Superbook.Views.SportsIndex = Backbone.View.extend({
   },
   
   render: function () {
-    console.log(this.collection)
-    var renderedContent = this.template({ sports: this.collection });
+    var renderedContent = this.template({
+      sports: this.collection
+    });
     this.$el.html(renderedContent);
     return this;
   }

@@ -5,12 +5,15 @@ window.Superbook = {
   Routers: {},
   initialize: function () {
     this.$el    = $("#main");
-    Superbook.Collections.sports.fetch();
     this.sports = Superbook.Collections.sports
+    
+    Superbook.Collections.sports.fetch();
+    
     var router = new Superbook.Routers.Router({
       $rootEl: this.$el,
       sports: this.sports
     });
+    
     Backbone.history.start();
   }
 }

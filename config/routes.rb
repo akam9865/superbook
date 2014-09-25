@@ -8,5 +8,6 @@ Superbook::Application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :sports, except: [:new, :edit]
+    resources :games, except: [:new, :edit]
   end
 end
