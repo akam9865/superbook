@@ -1,6 +1,22 @@
-<form>
-  <label>Bet $</label>
-  <input type="text" name="bet[amount]">
-  
-  <input type="submit">
-</form>
+<li class="list-group-item">
+  <form role="form" class="new-bet-form
+    ">
+    <div class="form-group">      
+      <label  for="amount">bet $</label>
+      <input 
+        id="amount"
+        name="bet[amount]"
+        class="form-control"
+        type="text">
+
+
+
+      <label for="win-amount">win $</label>
+      <input
+        id="win-amount"
+        class="form-control"
+        type="text">
+		</div>
+		<input type="submit" value="Place Bet" class="btn btn-danger">
+  </form>
+</li>

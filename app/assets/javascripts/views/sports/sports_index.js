@@ -31,10 +31,12 @@ Superbook.Views.SportsIndex = Backbone.CompositeView.extend({
   
   renderSportGames: function (event) {
     event.preventDefault();
-    var sport = this.collection.find(function (model){
-      return model.get('id') == $(event.currentTarget).data('id')
-    });
-
+    
+    var sport = this.collection.getOrFetch($(event.currentTarget).data('id'));
+    
+    // var sport = this.collection.find(function (model){
+    //   return model.get('id') == $(event.currentTarget).data('id')
+    // });
 
     var sportShow = new Superbook.Views.SportShow({ model: sport });
 
@@ -52,6 +54,12 @@ Superbook.Views.SportsIndex = Backbone.CompositeView.extend({
 
     var gameId = $(event.currentTarget).data('game-id')
     var teamId = $(event.currentTarget).data('team-id')
+    
+    var game = this
+    
+    var bet = new Superbook.Models.Bet({
+      
+    })
     
     var newBetView = new Superbook.Views.BetNew();
     this.addSubview(".bets-list", newBetView);

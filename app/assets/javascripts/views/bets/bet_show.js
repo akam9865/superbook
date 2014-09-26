@@ -3,7 +3,6 @@ Superbook.Views.BetShow = Backbone.CompositeView.extend({
   
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
-
   },
   
   render: function () {
@@ -17,6 +16,4 @@ Superbook.Views.BetShow = Backbone.CompositeView.extend({
 
     return this;
   }
-  
-
 });

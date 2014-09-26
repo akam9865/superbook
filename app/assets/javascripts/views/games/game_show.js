@@ -2,7 +2,7 @@ Superbook.Views.GameShow = Backbone.CompositeView.extend({
   template: JST["games/show"],
   
   events: {
-    "click .team-bet": "addBet"
+
   },
   
   initialize: function () {

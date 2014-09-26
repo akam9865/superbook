@@ -4,8 +4,10 @@ Superbook.Views.BetNew = Backbone.CompositeView.extend({
   
   render: function () {
     // this.$el.empty();
-    
-    var renderedContent = this.template();
+
+    var renderedContent = this.template({
+      team: this.team
+    });
     this.$el.html(renderedContent);
     return this;
   }
