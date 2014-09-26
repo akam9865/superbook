@@ -1,14 +1,22 @@
 
 <li class="list-group-item">
   
-  <a href="#" class="team-bet">
-    <%= game.attributes.team1.city %>
-    <%= game.attributes.team1.name %>
+  <a
+    href="#"
+    class="team-bet"
+    data-team-id="<%= game.attributes.team1.id %>"
+    data-game-id="<%= game.escape('id') %>">
+      <%= game.attributes.team1.city %>
+      <%= game.attributes.team1.name %>
   </a>
   -v-
-  <a href="#" class="team-bet">
-    <%= game.attributes.team2.city %>
-    <%= game.attributes.team2.name %>
+  <a
+    href="#"
+    class="team-bet"
+    data-team-id="<%= game.attributes.team2.id %>"
+    data-game-id="<%= game.escape('id') %>">
+      <%= game.attributes.team2.city %>
+      <%= game.attributes.team2.name %>
   </a>
 
   odds:

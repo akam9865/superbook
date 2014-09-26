@@ -11,6 +11,7 @@ json.array! @sports do |sport|
      json.team2 game.team2
      json.day game.day
      json.odds game.odds
+     json.id game.id
     end
 
 end

@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140924180325) do
+ActiveRecord::Schema.define(version: 20140926163830) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bets", force: true do |t|
+    t.decimal "amount",  precision: 16, scale: 2
+    t.integer "game_id"
+    t.integer "team_id"
+    t.integer "user_id"
+  end
 
   create_table "days", force: true do |t|
     t.integer  "user_id"

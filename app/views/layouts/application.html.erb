@@ -23,8 +23,10 @@
 			<p class="navbar-text">user: <%= current_user.username %></p>
 			<p class="navbar-text">bankroll: <%= current_user.bankroll %></p>
 
-
-			<li class="pull-right"><%= link_to "Sign out", session_url, method: :delete %></li>
+			<li class="pull-right">
+        <%= link_to "Sign out", session_url, method: :delete %>
+      </li>
+      <li class="pull-right"><a href="#/sports">sports</a></li>
 			
 		<% else %>
 		

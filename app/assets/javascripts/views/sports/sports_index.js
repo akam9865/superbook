@@ -14,7 +14,8 @@ Superbook.Views.SportsIndex = Backbone.CompositeView.extend({
   },
   
   events: {
-    "click .sport-link": "renderSportGames"
+    "click .sport-link": "renderSportGames",
+    "click .team-bet": "renderNewBet"
   },
   
   render: function () {
@@ -44,6 +45,16 @@ Superbook.Views.SportsIndex = Backbone.CompositeView.extend({
     oldView && this.removeSubview('.game-list', oldView);
 
     this.addSubview(".game-list", sportShow);
+  },
+  
+  renderNewBet: function (event) {
+    event.preventDefault();
+
+    var gameId = $(event.currentTarget).data('game-id')
+    var teamId = $(event.currentTarget).data('team-id')
+    
+    var newBetView = new Superbook.Views.BetNew();
+    this.addSubview(".bets-list", newBetView);
   }
   
 });
