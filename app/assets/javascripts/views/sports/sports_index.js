@@ -3,9 +3,14 @@ Superbook.Views.SportsIndex = Backbone.CompositeView.extend({
   
   initialize: function () {
     this.listenTo(this.collection, 'sync', this.render);
-    // var gamesView = new Superbook.Views.GamesIndex({ collection: this.collection });
-    // this.addSubview(".games-index", gamesView);
+    
+    var sport = new Superbook.Models.Sport();
+    var sportShow = new Superbook.Views.SportShow({ model: sport });
+    this.addSubview(".game-list", sportShow);
     // ADD DEFAULT GAMES LIST
+    // var games = new Superbook.Collections.Games([], {});
+    // var gamesView = new Superbook.Views.GamesIndex({ collection: games });
+    // this.addSubview(".game-list", gamesView);
   },
   
   events: {
@@ -19,27 +24,26 @@ Superbook.Views.SportsIndex = Backbone.CompositeView.extend({
 
     this.$el.html(renderedContent);
     this.attachSubviews();
-    
+
     return this;
   },
   
   renderSportGames: function (event) {
     event.preventDefault();
-    
-    // this.resetSubview(".games-index");
-    
-    // var games = this.collection.models[event.currentTarget.id - 1].games();
-    var games = this.collection.find(function (model){
+    var sport = this.collection.find(function (model){
       return model.get('id') == $(event.currentTarget).data('id')
-    }).games();
+    });
 
-    var gamesView = new Superbook.Views.GamesIndex({ collection: games });
+
+    var sportShow = new Superbook.Views.SportShow({ model: sport });
+
+    // var gamesView = new Superbook.Views.GamesIndex({ collection: games });
     
     // check if there's already a view, then call removeSubview on it
-    var oldView = this.subviews('.games-index')[0]
-    oldView && this.removeSubview('.games-index', oldView);
+    var oldView = this.subviews('.game-list')[0];
+    oldView && this.removeSubview('.game-list', oldView);
 
-    this.addSubview(".games-index", gamesView);
+    this.addSubview(".game-list", sportShow);
   }
   
 });
