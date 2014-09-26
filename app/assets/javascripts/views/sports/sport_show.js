@@ -8,6 +8,10 @@ Superbook.Views.SportShow = Backbone.CompositeView.extend({
     this.model.games().each(this.addGame.bind(this));
   },
   
+  // 1) click handler on team links
+  // 2) add bet subview
+  // 3) listen to add?
+  
   addGame: function (game) {
     var gameShow = new Superbook.Views.GameShow({ model: game });
 

@@ -1,4 +1,17 @@
 
 <li class="list-group-item">
-  <%= game.attributes.team1.name %>  
+  
+  <a href="#" class="team-bet">
+    <%= game.attributes.team1.city %>
+    <%= game.attributes.team1.name %>
+  </a>
+  -v-
+  <a href="#" class="team-bet">
+    <%= game.attributes.team2.city %>
+    <%= game.attributes.team2.name %>
+  </a>
+
+  odds:
+  <%= game.escape('odds') %>
+  
 </li>
