@@ -6,7 +6,7 @@ window.Superbook = {
   initialize: function () {
     this.$el    = $("#main");
     this.sports = Superbook.Collections.sports;
-    
+    this.bets   = Superbook.Collections.bets;
     // Superbook.Collections.sports.fetch();
     this.sports.fetch();
     
@@ -14,10 +14,28 @@ window.Superbook = {
       $rootEl: this.$el,
       sports: this.sports
     });
-    
+    // Superbook.createBetView();
+    Superbook.setUp(this.bets, this.sports)
     Backbone.history.start();
+  },
+  
+  setUp: function (bets, sports) {
+    var betsIndex   = new Superbook.Views.BetsIndex({ collection: bets });
+    var sportsIndex = new Superbook.Views.SportsIndex({ collection: sports });
+    
+    $("#sports-index").html(sportsIndex.render().$el);
+    $("#bets-index").html(betsIndex.render().$el);
+  },
+  
+  createBetView: function(){
+    var betView = new Superbook.Views.BetNew({model: Superbook.Models.bet});
+    $('.bets').html(betView.render().$el);
   }
 };
+
+// 
+// COMPOSITE VIEW EXTENSION
+// 
 
 Backbone.CompositeView = Backbone.View.extend({
   addSubview: function (selector, subview) {

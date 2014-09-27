@@ -4,5 +4,10 @@ module Api
       @games = Game.all
       render :index
     end
+    
+    def show
+      @game = Game.find(params[:id])
+      render :show
+    end
   end
 end

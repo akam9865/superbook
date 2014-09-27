@@ -6,7 +6,7 @@ window.Superbook.Collections.Sports = Backbone.Collection.extend({
     var sport = this.get(id);
 
     if(!sport) {
-      sport = new TrelloClone.Models.Sport({ id: id });
+      sport = new Superbook.Models.Sport({ id: id });
       sport.fetch({
         success: function () {
           this.add(sport);
