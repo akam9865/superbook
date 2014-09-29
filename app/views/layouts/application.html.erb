@@ -27,6 +27,7 @@
         <%= link_to "Sign out", session_url, method: :delete %>
       </li>
       <li class="pull-right"><a href="#/sports">sports</a></li>
+      <li class="pull-right"><a href="#/users/<%= current_user.id %>">my bets</a></li>
 			
 		<% else %>
 		

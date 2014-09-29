@@ -3,7 +3,7 @@ class BetsController < ApplicationController
   end
   
   def create
-    @bet = current_user.bets.new(params[:bet][:amount])
+    @bet = current_user.bets.new(bet_params)
     
     if @bet.save
       # something

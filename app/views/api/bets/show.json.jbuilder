@@ -1,0 +1,1 @@
+json.extract! @bet, :id, :user_id, :game_id, :team_id

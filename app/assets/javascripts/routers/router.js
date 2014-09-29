@@ -1,7 +1,9 @@
 Superbook.Routers.Router = Backbone.Router.extend({
   routes: {
     "sports": "sportsIndex",
-    "sports/:id": "sportShow"
+    "sports/:id": "sportShow",
+    "users": "usersIndex",
+    "users/:id": "userShow"
   },
   
   initialize: function (options) {
@@ -21,6 +23,17 @@ Superbook.Routers.Router = Backbone.Router.extend({
     var sport = this.sports.getOrFetch(id);
     var showView = new Superbook.Views.SportShow({ model: sport });
     this._swapView(showView);
+  },
+  
+  userShow: function (id) {
+    var user = new Superbook.Models.User({ id: id });
+    user.fetch();
+    var showView = new Superbook.Views.UserShow({ model: user });
+    this._swapView(showView);
+  },
+  
+  userIndex: function () {
+    
   },
   
   _swapView: function (view) {

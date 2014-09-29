@@ -34,8 +34,21 @@ Superbook.Views.BetNew = Backbone.CompositeView.extend({
   
 	submitBet: function (event) {
 		event.preventDefault();
+    var that   = this;
+    var params = $(event.target).serializeJSON();
+    var newBet = new Superbook.Models.Bet(params["bet"]);
+    
+    newBet.save({}, {
+      success: function () {
+        // add to some collection?
+        // remove subview
+        // remove class active
+        that.removeSubview("#bets-list", that);
+        $(".btn.team." + that.model.attributes.team.id).removeClass("active");
+        
+      }
+    });
 
-    debugger
 	},
 	
 	removeBet: function (event) {
