@@ -7,8 +7,18 @@
   <%= bet.game.attributes.day.date %>
 	
   <form role="form" class="new-bet-form">
+    <input
+      type="hidden"
+      name="bet[game_id]"
+      value="<%= bet.game.attributes.id %>">
+      
+    <input
+      type="hidden"
+      name="bet[team_id]"
+      value="<%= bet.attributes.team.id %>">
+      
     <div class="form-group">      
-      <label  for="amount">bet $</label>
+      <label for="amount">bet $</label>
       <input 
         id="amount"
         name="bet[amount]"

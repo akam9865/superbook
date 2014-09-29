@@ -10,7 +10,7 @@
 	      <%= game.attributes.team1.name %>
 	  </a>
 	
-		<button type="button" id="team-1" class="btn btn-default pull-right team"><%= this.model.renderOdds[0] %></button>
+		<button type="button" id="team-1" class="btn btn-default pull-right team <%= this.model.attributes.team1.id %>"><%= this.model.renderOdds[0] %></button>
 	</div>
 	<br>
   <div>
@@ -23,7 +23,7 @@
 	      <%= game.attributes.team2.name %>
 	  </a>
 
-		<button type="button" id="team-2" class="btn btn-default pull-right team"><%= this.model.renderOdds[1] %></button>
+		<button type="button" id="team-2" class="btn btn-default pull-right team <%= this.model.attributes.team2.id %>"><%= this.model.renderOdds[1] %></button>
   </div>
 	<br>
 	
