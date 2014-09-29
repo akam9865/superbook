@@ -4,7 +4,8 @@ Superbook.Models.Bet = Backbone.Model.extend({
   
   initialize: function (options) {
     this.team = options.team,
-    this.game = options.game
+    this.game = options.game,
+		this.odds = options.odds
   },
   
   // startBet: function(options) {

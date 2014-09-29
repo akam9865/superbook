@@ -18,3 +18,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "font-awesome";
+
+
+.team {
+	font-family: 'Roboto', sans-serif;
+	font-size: 11px;
+/*	font-weight: bold;*/
+	
+}
+
+.team.active {
+	background-color: #e21e25;
+	border-color: #d1191f;
+	color: white;
+	font-weight: bold;
+}
