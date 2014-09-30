@@ -1,29 +1,31 @@
 
 <li class="list-group-item">
   <div>
-	  <a
-	    href="#"
-	    class="team-bet team-1"
-	    data-team-id="<%= game.attributes.team1.id %>"
-	    data-game-id="<%= game.escape('id') %>">
+	  <span>
 	      <%= game.attributes.team1.city %>
 	      <%= game.attributes.team1.name %>
-	  </a>
+	  </span>
 	
-		<button type="button" id="team-1" class="btn btn-default pull-right team <%= this.model.attributes.team1.id %>"><%= this.model.renderOdds[0] %></button>
+		<button
+    type="button"
+    id="team-1"
+    class="btn btn-default pull-right team <%= this.model.attributes.team1.id %>">
+      <%= this.model.renderOdds[0][0] + this.model.renderOdds[0][1] %>
+    </button>
 	</div>
 	<br>
   <div>
-		<a
-	    href="#"
-	    class="team-bet team-2"
-	    data-team-id="<%= game.attributes.team2.id %>"
-	    data-game-id="<%= game.escape('id') %>">
+		<span>
 	      <%= game.attributes.team2.city %>
 	      <%= game.attributes.team2.name %>
-	  </a>
+	  </span>
 
-		<button type="button" id="team-2" class="btn btn-default pull-right team <%= this.model.attributes.team2.id %>"><%= this.model.renderOdds[1] %></button>
+		<button
+    type="button"
+    id="team-2"
+    class="btn btn-default pull-right team <%= this.model.attributes.team2.id %>">
+      <%= this.model.renderOdds[1][0] + this.model.renderOdds[1][1] %>
+    </button>
   </div>
 	<br>
 	

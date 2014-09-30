@@ -4,6 +4,8 @@ module Api
       @bet = current_user.bets.new(self.bet_params)
     
       if @bet.save
+        current_user.bankroll -= @bet.amount
+        current_user.save
         render :show
       else
         render json: @bet.errors, status: :unprocessable_entity

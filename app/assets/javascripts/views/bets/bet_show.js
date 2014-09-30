@@ -6,8 +6,6 @@ Superbook.Views.BetShow = Backbone.CompositeView.extend({
   },
   
   render: function () {
-    // this.$el.empty();
-    
     var renderedContent = this.template({
       bet: this.model
     });
