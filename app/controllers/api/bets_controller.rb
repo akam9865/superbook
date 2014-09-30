@@ -2,7 +2,7 @@ module Api
   class BetsController < ApiController
     def create
       @bet = current_user.bets.new(self.bet_params)
-      to_win(@bet, @bet.game.odds)
+      # to_win(@bet, @bet.game.odds)
       @bet.result = "pending"
     
       if @bet.save
@@ -25,7 +25,7 @@ module Api
     end
 
     def bet_params
-      self.params[:bet].permit(:amount, :team_id, :game_id)
+      self.params[:bet].permit(:amount, :team_id, :game_id, :to_win)
     end
   end
 end
