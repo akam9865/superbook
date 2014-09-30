@@ -16,13 +16,13 @@ module Api
 
     protected
 
-    def to_win(bet, odds)
-      if bet.team == bet.game.team1
-        bet.to_win = odds / (1 - odds) * bet.amount
-      else
-        bet.to_win = (1 - odds) / odds * bet.amount
-      end
-    end
+    # def to_win(bet, odds)
+    #   if bet.team == bet.game.team1
+    #     bet.to_win = odds / (1 - odds) * bet.amount
+    #   else
+    #     bet.to_win = (1 - odds) / odds * bet.amount
+    #   end
+    # end
 
     def bet_params
       self.params[:bet].permit(:amount, :team_id, :game_id, :to_win)
