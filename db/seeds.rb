@@ -6,9 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-u1 = User.create({ username: "kylesmith1", password: "jkl;'", bankroll: 1000000.00 })
-u2 = User.create({ username: "mayweather", password: "jkl;'", bankroll: 1000000000.00 })
-u3 = User.create({ username: "dbilzerian", password: "jkl;'", bankroll: 1000000000000.00 })
+u1 = User.create({ username: "kylesmith1", password: "jkl;'", bankroll: 1000000 })
+u2 = User.create({ username: "mayweather", password: "jkl;'", bankroll: 1000000000 })
+u3 = User.create({ username: "dbilzerian", password: "jkl;'", bankroll: 1000000000000 })
+u4 = User.create({ username: "guest",      password: "guest", bankroll: 1000 })
 
 
 s1 = Sport.create({ name: "Baseball" })
