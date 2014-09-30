@@ -26,8 +26,12 @@ Superbook.Routers.Router = Backbone.Router.extend({
   },
   
   userShow: function (id) {
-    var user = new Superbook.Models.User({ id: id });
-    user.fetch();
+    // var user = new Superbook.Models.User({ id: id });
+    // user.fetch();
+    // var showView = new Superbook.Views.UserShow({ model: user });
+    // this._swapView(showView);
+    
+    var user = Superbook.Collections.users.getOrFetch(id);
     var showView = new Superbook.Views.UserShow({ model: user });
     this._swapView(showView);
   },

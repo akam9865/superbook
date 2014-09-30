@@ -6,7 +6,7 @@ window.Superbook = {
   initialize: function () {
     this.$el    = $("#main");
     this.sports = Superbook.Collections.sports;
-    this.bets   = Superbook.Collections.bets;
+    this.bets   = Superbook.Collections.ticketBets;
     // Superbook.Collections.sports.fetch();
     this.sports.fetch();
     

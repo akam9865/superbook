@@ -12,7 +12,7 @@ Superbook.Views.GameShow = Backbone.CompositeView.extend({
       game: this.model,
 			odds: odds
     });
-    Superbook.Collections.bets.add(newBet);
+    Superbook.Collections.ticketBets.add(newBet);
   },
   
   betTeam1: function(event){

@@ -1,6 +1,10 @@
 window.Superbook.Collections.Bets = Backbone.Collection.extend({
   model: Superbook.Models.Bet,
-  url: 'api/bets'
+  url: 'api/bets',
+  
+  initialize: function (options) {
+    this.user = options.user
+  }
 });
 
-Superbook.Collections.bets = new Superbook.Collections.Bets();
+Superbook.Collections.ticketBets = new Superbook.Collections.Bets({});

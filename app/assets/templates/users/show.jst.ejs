@@ -2,24 +2,8 @@
   <ul class="list-group">
     <h3 class="list-group-item">my bets</h3>
 
-    <% _(user.attributes.bets).each( function(bet) { %>
-
-      <li class="list-group-item">
-        <div>
-          <span>Straight Wager</span>
-        </div>
-        
-        <div>
-          Bet <%= bet.amount %> to win MATH
-        </div>
-      
-        <div>
-          <%= bet.team.city %>
-          <%= bet.team.name %>
-        </div>
-      </li>
-
-    <% }) %>
+    <div id="bets-list">
+    </div>
     
 
   </ul>

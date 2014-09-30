@@ -7,7 +7,7 @@
 # end
 
 json.bets @user.bets do |bet|
-  json.extract! bet, :id, :amount
+  json.extract! bet, :id, :amount, :to_win, :result
   
   json.team bet.team
   json.game bet.game

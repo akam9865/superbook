@@ -1,5 +1,19 @@
-<li class="list-group-item">
+<li class="bet-index list-group-item <%= bet.escape('result') %>">
   
-  <%= bet.escape("amount") %>
+
+  <div>
+    <span>straight wager</span>
+  </div>
+  
+  <div>
+    $<%= parseFloat(bet.escape('amount')).toFixed(2) %>
+    to win
+    $<%= parseFloat(bet.escape('to_win')).toFixed(2) %>
+  </div>
+  
+  <div>
+    <%= bet.team.city %>
+    <%= bet.team.name %>
+  </div>
   
 </li>
