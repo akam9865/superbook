@@ -1,7 +1,7 @@
 class Bet < ActiveRecord::Base
 
   validates :amount, numericality: { greater_than: 0 }
-  validate :enough_money
+  # validate :enough_money
   
   belongs_to :user
   belongs_to :game
