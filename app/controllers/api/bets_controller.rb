@@ -28,17 +28,13 @@ module Api
       
       if @bet.game.winner_id == @bet.team_id
         current_user.bankroll += @bet.amount + @bet.to_win
-        @bet.result = "winner"
+        @bet.update_attribute(:result, "winner")
       else
-        @bet.result = "loser"
+        @bet.update_attribute(:result, "loser")
       end
       
-      if @bet.save
-        current_user.save
-        render :show
-      else
-        render json: @bet.errors, status: :unprocessable_entity
-      end
+      current_user.save
+      render :show
     end
 
     protected
