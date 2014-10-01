@@ -15,12 +15,13 @@ Superbook.Routers.Router = Backbone.Router.extend({
     var indexView = new Superbook.Views.SportsIndex({
       collection: this.sports
     });
-    
+        
     $("#sports-index").html(indexView.render().$el);
   },
   
   sportShow: function (id) {
-    var sport = this.sports.getOrFetch(id);
+    
+    var sport = Superbook.Collections.sports.getOrFetch(id);
     var showView = new Superbook.Views.SportShow({ model: sport });
     this._swapView(showView);
   },

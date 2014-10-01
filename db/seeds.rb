@@ -12,9 +12,10 @@ u3 = User.create({ username: "dbilzerian", password: "jkl;'", bankroll: 10000000
 u4 = User.create({ username: "guest",      password: "guest", bankroll: 1000 })
 
 
-s1 = Sport.create({ name: "Baseball" })
-s2 = Sport.create({ name: "Football" })
-s3 = Sport.create({ name: "Basketball" })
+s1 = Sport.create({ name: "MLB" })
+s2 = Sport.create({ name: "NFL" })
+s3 = Sport.create({ name: "NBA" })
+s3 = Sport.create({ name: "NHL" })
 
 
 t1  = Team.create({ name: "Giants", city: "San Francisco", sport_id: 1 })

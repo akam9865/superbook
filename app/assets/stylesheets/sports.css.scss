@@ -1,3 +1,44 @@
 // Place all the styles related to the Sports controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+h3#games {
+  padding: 0;
+  margin: 0 0 0 -1px;
+}
+
+
+.games-header {
+  margin-top: 20px;
+  height: 80px;
+}
+
+.header-tabs {
+  height: 30px;
+  background: white;
+  border-left: #b8b8b8 solid 1px;
+  border-right: #b8b8b8 solid 1px;
+}
+
+.header-title {
+  background-color: #3D4455;
+  height: 30px;
+  color: white;
+  border-radius: 4px 4px 0 0; 
+}
+
+.sub-header {
+  padding: 0 3px 0 25px;
+  background-color: #8E96AA;
+  color: #E0E1E1;
+}
+
+div.sport-name {
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+
+span.sub-header {
+  padding: 0 30px 0 0;
+}

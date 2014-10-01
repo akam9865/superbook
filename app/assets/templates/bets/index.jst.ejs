@@ -1,4 +1,30 @@
+<div class="ticket-header">BET TICKET</div>
+<div class="arrow-down"></div>
 
-<ul id="bets-list" class="list-group">
-  <h3 class="list-group-item">bets</h3>
-</ul>
+
+
+<% if (bets.isEmpty()){ %>
+  
+  <div class="ticket-starter">
+    <span class="glyphicon glyphicon-download icon-grey-spacing"></span>
+    <span class="start-betting">start betting</span>
+    <span class="col-xs-12 betting-message">Please add selections to your bet ticket</span>
+
+  </div>
+    
+
+  
+  
+<% } else{ %>
+
+  <div class="ticket-tabs">
+    some tabs
+  </div>
+  
+  <ul id="bets-list" class="list-group">
+  
+  </ul>
+  
+
+<% } %>
+

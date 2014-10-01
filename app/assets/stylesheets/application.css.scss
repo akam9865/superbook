@@ -19,11 +19,27 @@
 @import "bootstrap";
 @import "font-awesome";
 
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+body {
+  background: #EAEAEA;
+}
 
 .team {
-	font-family: 'Roboto', sans-serif;
+
 	font-size: 11px;
 	background-color: #E6E6E6;
+}
+
+.team-name {
+  line-height: 16px;
+//  height: 30px;
+
+  padding: 8px 0 0 15px;
+  color: #4d4d4d;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
 }
 
 .team:hover {
@@ -34,7 +50,6 @@
 	background-color: #e21e25;
 	border-color: #d1191f;
 	color: white;
-	font-weight: bold;
 }
 
 .bet-index-item {
@@ -51,6 +66,10 @@
 .bet-index-item.loser {
   background-color: #FDF7F7;
   border-color: #7A1D1D;
+}
+
+li.list-group-item {
+  padding: 0;
 }
 
 .bet-item-heading {
@@ -75,3 +94,61 @@
   color: white;
   background-color: #7A1D1D;
 }
+
+.btn.team {
+  width: 75px;
+  padding: 5px 20px 5px 20px;
+  margin: 1px 15px 1px 0;
+  font-weight: bold;
+}
+
+.eventrow {
+  height: 30px;
+  background-color: #fcfcfc;
+  border-top: 1px solid #e3e3e3;
+  font-family: 'Roboto', sans-serif;
+}
+
+.list-group-item:first-child {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.list-group-item:last-child {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+#bets-index {
+//  border-left: 1px solid white;
+//  border-right: 1px solid white;
+  border-bottom: 5px solid #8E96AA;
+  margin-bottom: -5px;
+
+  padding: 0;
+}
+
+#sports-index {
+  border: 1px solid white;
+  padding: 0;
+}
+
+#main {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  border-bottom: 1px solid white;
+  margin-bottom: 25px;
+}
+
+.main-nav {
+  background: #FFFFFF;
+}
+
+footer {
+  background-color: #2F3544;
+  color: #99A3BA;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+

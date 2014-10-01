@@ -13,7 +13,7 @@ Superbook.Views.SportShow = Backbone.CompositeView.extend({
     this.addSubview(".games-show-list", gameShow);
   },
   
-  render: function () {    
+  render: function () {
     var renderedContent = this.template({
       sport: this.model
     });

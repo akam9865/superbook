@@ -1,32 +1,41 @@
+<div class="event">
 
-<li class="list-group-item">
-  <div>
-	  <span>
-	      <%= game.attributes.team1.city %>
-	      <%= game.attributes.team1.name %>
-	  </span>
-	
-		<button
-    type="button"
-    id="team-1"
-    class="btn btn-default pull-right team <%= this.model.attributes.team1.id %>">
-      <%= this.model.renderOdds[0][0] + this.model.renderOdds[0][1] %>
-    </button>
-	</div>
-	<br>
-  <div>
-		<span>
-	      <%= game.attributes.team2.city %>
-	      <%= game.attributes.team2.name %>
-	  </span>
+  <li class="list-group-item">
+    
+    <div class="eventrow">
 
-		<button
-    type="button"
-    id="team-2"
-    class="btn btn-default pull-right team <%= this.model.attributes.team2.id %>">
-      <%= this.model.renderOdds[1][0] + this.model.renderOdds[1][1] %>
-    </button>
-  </div>
-	<br>
+    	  <div class="team-name col-xs-6">
+    	      <%= game.attributes.team1.city %>
+    	      <%= game.attributes.team1.name %>
+    	  </div>
 	
-</li>
+    		<button
+        type="button"
+        id="team-1"
+        class="btn btn-default pull-right team <%= this.model.attributes.team1.id %>">
+          <%= this.model.renderOdds[0][0] + this.model.renderOdds[0][1] %>
+        </button>
+
+    </div>
+
+    <div class="eventrow">
+
+    		<div class="team-name col-xs-6">
+    	      <%= game.attributes.team2.city %>
+    	      <%= game.attributes.team2.name %>
+    	  </div>
+
+    		<button
+        type="button"
+        id="team-2"
+        class="btn btn-default pull-right team <%= this.model.attributes.team2.id %>">
+          <%= this.model.renderOdds[1][0] + this.model.renderOdds[1][1] %>
+        </button>
+
+    </div>
+	
+  
+  
+  </li>
+
+</div>

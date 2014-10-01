@@ -1,3 +1,65 @@
 // Place all the styles related to the Bets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.ticket-header {
+  text-transform: uppercase;
+  font-size: 0.9em;
+  padding: 13px 0;
+  color: #FFF;
+  background: #8E96AA;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+ul#bets-list {
+  margin-bottom: 0;
+}
+
+.ticket-tabs {
+  height: 30px;
+  background: white;
+  border-bottom: 4px solid #3D4455;
+}
+
+
+.ticket-starter {
+  background: white;
+  color: #4D4D4D;
+
+  padding: 30px 0 50px 0;
+  font-size: 13px;
+
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.start-betting::selection, .betting-message::selection {
+  color: #FFFFFF;
+  background-color: #8E96AA;
+}
+
+.start-betting {
+  text-transform: uppercase;
+}
+
+.betting-message {
+
+  color: #999;
+//  margin-bottom: 28px;
+  text-align: center;
+}
+
+button.remove-bet {
+  margin: 0 0 10px 5px;
+  background: #1A1E29;
+  text-transform: uppercase;
+  color: white;
+}
+
+.btn.place {
+  margin: 0 5px 10px 0;
+  text-transform: uppercase;
+  background: #E21E25;
+  color: white;
+}
