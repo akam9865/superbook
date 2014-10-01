@@ -3,7 +3,16 @@ Superbook.Views.BetShow = Backbone.CompositeView.extend({
   
   initialize: function () {
     this.listenTo(this.model, 'sync', this.render);
+    this.listenTo(this.model, 'change:[result]', this.render);
+  },
+  
+  events: {
+    "click #simulator": "simGame"
+  },
+  
+  simGame: function (event) {
     
+    this.model.save();
   },
   
   render: function () {

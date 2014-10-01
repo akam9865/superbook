@@ -4,7 +4,7 @@ Superbook.Views.UserShow = Backbone.CompositeView.extend({
   initialize: function () {
     this.collection = this.model.bets();
     this.listenTo(this.model, "sync", this.render);
-    this.listenTo(this.collection, "add", this.addBet.bind(this));
+    this.listenTo(this.collection, "add", this.addBet);
     
     this.collection.each(this.addBet.bind(this));
   },
@@ -18,7 +18,6 @@ Superbook.Views.UserShow = Backbone.CompositeView.extend({
     var renderedContent = this.template({
       user: this.model
     });
-    
     
     this.$el.html(renderedContent);
     this.attachSubviews();

@@ -38,7 +38,40 @@
 }
 
 .bet-index-item {
-  margin-top: 20px;
+
   margin-bottom: 20px;
   background-color: #EAEAEA;
+}
+
+.bet-index-item.winner {
+  background-color: #F0FAF0;
+  border-color: #296B31;
+}
+
+.bet-index-item.loser {
+  background-color: #FDF7F7;
+  border-color: #7A1D1D;
+}
+
+.bet-item-heading {
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 5px;
+  padding-left: 25px;
+  color: #4D4D4D;
+  background-color: #BCBDBF;
+}
+
+.bet-item-heading.winner {
+  margin-top: 20px;
+
+  color: white;
+  background-color: #296B31;
+}
+
+.bet-item-heading.loser {
+  margin-top: 20px;
+  padding: 5px;
+  color: white;
+  background-color: #7A1D1D;
 }

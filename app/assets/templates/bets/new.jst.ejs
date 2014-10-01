@@ -22,14 +22,13 @@
       <input 
         id="amount"
         name="bet[amount]"
-        class="form-control bet-input"
+        class="form-control bet-input <%= bet.game.attributes.id %>"
         type="text">
 
       <!-- add handler to calculate win amount during bet input -->
       <label for="win-amount">win $</label>
       <input
-        id="win-amount"
-        class="form-control"
+        class="form-control win-input <%= bet.game.attributes.id %>"
         name="bet[to_win]"
         type="text"
         value=" ">

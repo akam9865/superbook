@@ -14,7 +14,19 @@ module Api
     end
     
     def update
+      @bet = Bet.find(params[:id])
+      @bet.game.simulate
       
+      if @bet.game.winner_id == @bet.team_id
+        current_user.bankroll += @bet.amount + @bet.to_win
+        @bet.result = "winner"
+      else
+        @bet.result = "loser"
+      end
+      
+      @bet.save
+      current_user.save
+      render :show
     end
 
     protected

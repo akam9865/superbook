@@ -9,25 +9,26 @@ Superbook.Views.BetNew = Backbone.CompositeView.extend({
     "submit": "submitBet",
     "click .remove-bet": "removeBet",
     "keyup .bet-input": "keyupBet",
-    "keyup #win-amount": "keyupWin"
+    "keyup .win-input": "keyupWin"
   },
   
   keyupBet: function (event) {
     var odds = this.model.game.attributes.odds;
-    var amt  = $(".bet-input").val();
-    
+
+    var amt  = $(".bet-input." + this.model.game.attributes.id).val();
+
     if (this.model.team == this.model.game.attributes.team1) {
       var winAmt = amt * odds / (1 - odds);
     } else {
       var winAmt = amt * (1 - odds) / odds;
     }
     
-    $("#win-amount").val(winAmt.toFixed(2));
+    $(".win-input." + this.model.game.attributes.id).val(winAmt.toFixed(2));
   },
   
   keyupWin: function (event) {
     var odds = this.model.game.attributes.odds;
-    var amt  = $("#win-amount").val();
+    var amt  = $(".win-input." + this.model.game.attributes.id).val();
     
     if (this.model.team == this.model.game.attributes.team1) {
       var betAmt = amt * (1 - odds) / odds;
@@ -35,7 +36,7 @@ Superbook.Views.BetNew = Backbone.CompositeView.extend({
       var betAmt = amt * odds / (1 - odds);
     }
     
-    $(".bet-input").val(betAmt.toFixed(2));
+    $(".bet-input." + this.model.game.attributes.id).val(betAmt.toFixed(2));
   },
   
 	submitBet: function (event) {

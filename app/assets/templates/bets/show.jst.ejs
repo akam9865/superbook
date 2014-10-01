@@ -1,19 +1,34 @@
-<li class="bet-index-item list-group-item <%= bet.escape('result') %>">
+<div class="bet-item-heading <%= bet.escape('result') %>">
+  <span>Bet #<%= bet.escape('id') %></span>
   
+  <% if (bet.escape('result') == 'pending'){ %>
+    <button
+      id="simulator"
+      class="pull-right btn-xs btn-primary">
+      simulate!
+    </button>
+  <% } %>
+</div>
+<div class="bet-index-item list-group-item <%= bet.escape('result') %>">
 
-  <div>
-    <span>straight wager</span>
+  <div class="bet-item-main">
+    <div>
+      <span>straight wager</span>
+    </div>
+  
+    <div>
+      $<%= parseFloat(bet.escape('amount')).toFixed(2) %>
+      to win
+      $<%= parseFloat(bet.escape('to_win')).toFixed(2) %>
+    </div>
+  
+    <div>
+      <%= bet.team.city %>
+      <%= bet.team.name %>
+    </div>
   </div>
   
-  <div>
-    $<%= parseFloat(bet.escape('amount')).toFixed(2) %>
-    to win
-    $<%= parseFloat(bet.escape('to_win')).toFixed(2) %>
-  </div>
-  
-  <div>
-    <%= bet.team.city %>
-    <%= bet.team.name %>
-  </div>
-  
-</li>
+  <!-- <div class="col-xs-6">
+    blank
+  </div> -->
+</div>
