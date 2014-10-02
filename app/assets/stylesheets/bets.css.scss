@@ -63,3 +63,39 @@ button.remove-bet {
   background: #E21E25;
   color: white;
 }
+
+.ticket-item {
+  padding: 20px 10px 10px 10px;
+}
+
+.glyphicon-remove {
+  color: #E21E25;
+}
+
+.glyphicon-info-sign {
+  color: #428BCA;
+}
+
+.team-odds {
+  border-top: 1px dotted #CECFD2;
+}
+
+.game-info {
+  color: #8C8C8C;
+}
+
+.game-date {
+
+}
+
+div.type-delete {
+  color: #82828C;
+  text-transform: uppercase;
+}
+
+.win-input, .bet-input {
+  width: 20%;
+  height: 24px;
+  padding: 0 10px 0 10px;
+  display: inline-block;
+}

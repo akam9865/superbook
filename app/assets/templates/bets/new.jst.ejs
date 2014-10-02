@@ -1,40 +1,81 @@
 <li class="list-group-item">
+  <div class="ticket-item">
+    <div class="type-delete">
+      Straight Wager
+      <a href="#" class="remove-bet">
+        <span class="glyphicon glyphicon-remove pull-right"></span>
+      </a>
+    </div>
   
-  <%= bet.attributes.team.city %>
-  <%= bet.attributes.team.name %>
-  <%= bet.odds[0] %><%= bet.odds[1] %>
-	<br>
-  <%= bet.game.attributes.day.date %>
-	
-  <form role="form" class="new-bet-form">
-    <input
-      type="hidden"
-      name="bet[game_id]"
-      value="<%= bet.game.attributes.id %>">
+    <div
+      class="team-odds">
       
-    <input
-      type="hidden"
-      name="bet[team_id]"
-      value="<%= bet.attributes.team.id %>">
+      <span class="market-details glyphicon glyphicon-info-sign"></span>
       
-    <div class="form-group">      
-      <label for="amount">bet $</label>
-      <input 
-        id="amount"
-        name="bet[amount]"
-        class="form-control bet-input <%= bet.game.attributes.id %>"
-        type="text">
+      <%= bet.attributes.team.city %>
+      <%= bet.attributes.team.name %>
+    
+      <span class="pull-right">
+        <%= bet.odds[0] %><%= bet.odds[1] %>
+      </span>
+    </div>
+    
+    <div id="game-info<%= bet.game.attributes.id %>">
+      <div class="game-info">
+        <%= bet.game.attributes.team1.city%>
+        <%= bet.game.attributes.team1.name%> vs.
+        <%= bet.game.attributes.team2.city%>
+        <%= bet.game.attributes.team2.name%>
+      </div>
+      
+      <span class="game-date">
+        <%= bet.game.attributes.day.date %>
+      </span>
+    </div>
+  </div>
+  
 
-      <!-- add handler to calculate win amount during bet input -->
-      <label for="win-amount">win $</label>
-      <input
-        class="form-control win-input <%= bet.game.attributes.id %>"
-        name="bet[to_win]"
-        type="text"
-        value=" ">
+
+	<div class="new-bet-form">
+    
+    <form class="new-bet-form">
+      
+
+        <input
+          type="hidden"
+          name="bet[game_id]"
+          value="<%= bet.game.attributes.id %>">
+      
+        <input
+          type="hidden"
+          name="bet[team_id]"
+          value="<%= bet.attributes.team.id %>">
+      
+
+              
+          <label for="amount">bet $</label>
+          <input 
+            id="amount"
+            name="bet[amount]"
+            class="form-control bet-input <%= bet.game.attributes.id %>"
+            type="text"
+            value="0.00">
+
+
+
+          <label for="win-amount">win $</label>
+          <input
+            class="form-control win-input <%= bet.game.attributes.id %>"
+            name="bet[to_win]"
+            type="text"
+            value="0.00">
+          
+
         
-		</div>
-		<button type="button" class="btn remove-bet">Remove Bet</button>
-		<input type="submit" value="Place Bet" class="btn place btn-danger pull-right">
-  </form>
+  		</div>
+  		<button type="button" class="btn remove-bet">Remove Bet</button>
+  		<input type="submit" value="Place Bet" class="btn place btn-danger pull-right">
+    </form>
+    
+  </div>
 </li>
