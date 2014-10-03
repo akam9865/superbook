@@ -23,7 +23,7 @@ ul#bets-list {
 }
 
 .ticket-tabs {
-  height: 30px;
+  height: 5px;
   background: white;
   border-bottom: 4px solid #3D4455;
 }
@@ -70,6 +70,10 @@ button.remove-bet {
   color: white;
 }
 
+button.remove-bet:hover {
+  color: white;
+}
+
 .btn.place {
   margin: 0 5px 10px 0;
   text-transform: uppercase;
@@ -111,6 +115,7 @@ div.type-delete {
   height: 24px;
   padding: 0 10px 0 10px;
   display: inline-block;
+  font-size: 10px;
 }
 
 .bet-item-heading {
@@ -211,4 +216,17 @@ button.search-bets:hover {
   height: 20px;
   width: 60px;
   padding: 0;
+}
+
+.inputs {
+  padding: 10px;
+}
+
+.max-button {
+  font-size: 10px;
+  padding-top: 4px;
+  background: #8E96AA;
+  color: white;
+  margin: 0 4px 2px 4px;
+  padding-bottom: 4px;
 }

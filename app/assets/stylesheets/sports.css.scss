@@ -18,6 +18,7 @@ h3#games {
   background: white;
   border-left: #b8b8b8 solid 1px;
   border-right: #b8b8b8 solid 1px;
+  padding-left: 7px;
 }
 
 .header-title {
@@ -75,6 +76,7 @@ a.sport-link {
   color: #53565D;
   font-family: Helvetica, Arial, sans-serif;
   font-size: 9pt;
+  text-transform: uppercase;
 }
 
 span.glyphicon-chevron-down {
@@ -82,4 +84,22 @@ span.glyphicon-chevron-down {
   padding-top: 5px;
   padding-right: 3px;
   font-size: 8px;
+}
+
+.quarter {
+
+}
+
+.nav > li > a.q-tab {
+  padding: 4px 11px 4px 11px;
+  border-radius: 0;
+  margin-top: 7px;
+  background: #EFEFEF;
+  color: #999999;
+  font-size: 10px;
+}
+
+.nav > li.active > a.q-tab {
+  background: #8E96AA;
+  color: #FEFEFE;
 }

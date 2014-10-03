@@ -9,7 +9,13 @@ Superbook.Views.BetNew = Backbone.CompositeView.extend({
     "submit": "submitBet",
     "click .remove-bet": "removeBet",
     "keyup .bet-input": "keyupBet",
-    "keyup .win-input": "keyupWin"
+    "keyup .win-input": "keyupWin",
+    "click .max-button": "enterMax"
+  },
+  
+  enterMax: function (event) {
+    $(".bet-input." + this.model.game.attributes.id).val(5000.00);
+    this.keyupBet(event)
   },
   
   keyupBet: function (event) {
@@ -58,6 +64,8 @@ Superbook.Views.BetNew = Backbone.CompositeView.extend({
 	
 	removeBet: function (event) {
     // remove subview selector: '#bets-list subview: IDK
+    
+    
     this.removeSubview("#bets-list", this);
     Superbook.Collections.ticketBets.remove(this.model);
     // find button and remove active class

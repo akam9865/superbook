@@ -146,6 +146,41 @@ li.list-group-item {
   display: inline-block;
 }
 
+html,
+body {
+  margin:0;
+  padding:0;
+  height:100%;
+}
+
+#wrapper {
+  min-height:100%;
+  position:relative;
+}
+
+
+//#content {
+//  padding: 10px;
+//  min-height: 100%;
+//  margin-bottom: -80px;   /* Height of the footer element */
+//}
+  
+#footer {
+//  width:100%;
+//  height:80px;
+//  position: relative;
+//
+//
+//  background:#ee5;
+//
+  
+  background-color: #2F3544;
+  color: #99A3BA;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 #main {
   padding: 0 20px 0 20px;
   left: 20%;
@@ -189,6 +224,7 @@ footer {
 
 .refresh-button {
   margin: 25px 5px 0 0;
+
 }
 
 .name-and-bank {
@@ -265,4 +301,9 @@ ul.dropdown-menu {
 
 .signup {
   margin-right: 10px;
+}
+
+.guest-login-button, .login-button-1 {
+  background: #223469;
+  border: none;
 }

@@ -7,7 +7,6 @@ Superbook.Views.BetsIndex = Backbone.CompositeView.extend({
     // new method to add subview for new bets
     this.listenTo(this.collection, 'add', this.addNewBet);
     this.listenToOnce(this.collection, 'add', this.render);
-    
   },
 	
 	addNewBet: function () {

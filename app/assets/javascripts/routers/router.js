@@ -4,6 +4,11 @@ Superbook.Routers.Router = Backbone.Router.extend({
     "sports/:id": "sportShow",
     "users": "usersIndex",
     "users/:id": "userShow"
+
+  },
+  
+  refresh: function (){
+    
   },
   
   initialize: function (options) {
