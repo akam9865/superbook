@@ -42,3 +42,44 @@ div.sport-name {
 span.sub-header {
   padding: 0 30px 0 0;
 }
+
+.search-panel {
+  padding: 9px 0 0 30px;
+  height: 44px;
+  background: #8E96AA;
+}
+
+.search {
+  color: white;
+  background: #1A1E29;
+  border: none;
+  font-size: 11px;
+  height: 26px;
+  width: 55px;
+  padding: 4px 5px 4px 5px;
+}
+
+
+
+.search-input {
+  width: 100px;
+}
+
+li.list-group-item.sport-link {
+  border: none;
+  padding: 7px 10px 7px 15px;
+  height: 26px;
+}
+
+a.sport-link {
+  color: #53565D;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 9pt;
+}
+
+span.glyphicon-chevron-down {
+  color: #C1C5CC;
+  padding-top: 5px;
+  padding-right: 3px;
+  font-size: 8px;
+}

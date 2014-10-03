@@ -1,10 +1,51 @@
 <div class="my-bets">
-  <ul class="list-group">
-    <h3 class="list-group-item">my bets</h3>
 
-    <div id="bets-list">
+  <form role="form">
+    
+    <div class="form-group col-xs-6">
+      <label>Search for</label>
+      <select class="form-control">
+        <option>Pending and Processed</option>
+        <option>Pending</option>
+        <option>Processed</option>
+      </select>
     </div>
     
+    <div class="form-group col-xs-6 radios">
+      <div><label><input type="radio" checked>  By Bet Date</label></div>
+      <div><label><input type="radio">  By Event Date</label></div>
+    </div>
+    
+    <div class="form-group col-xs-12">
+      <label>Date Range</label>
+      <select class="form-control">
+        <option>This Month</option>
+        <option>Last Three Days</option>
+        <option>Last Week</option>
+        <option selected>Last 31 Days</option>
+        <option>September 2014</option>
+        <option>August 2014</option>
+        <option>July 2014</option>
+        <option>June 2014</option>
+        <option>May 2014</option>
+        <option>April 2014</option>
+        <option>Custom</option>
+      </select>
+    </div>
+    
+    
+    <div class="form-group col-xs-12"><button class="btn btn-default search-bets">SEARCH</button></div>
+    
+  </form>
 
-  </ul>
+  <div class="col-xs-12">
+    <ul class="list-group">
+
+
+      <div id="bets-list">
+      </div>
+    
+
+    </ul>
+  </div>
 </div>

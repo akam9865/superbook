@@ -1,34 +1,54 @@
-<div class="bet-item-heading <%= bet.escape('result') %>">
-  <span>Bet #<%= bet.escape('id') %></span>
-  
-  <% if (bet.escape('result') == 'pending'){ %>
-    <button
-      id="simulator"
-      class="pull-right btn-xs btn-primary">
-      simulate!
-    </button>
-  <% } %>
-</div>
-<div class="bet-index-item list-group-item <%= bet.escape('result') %>">
+<!-- <div class="<%= bet.escape('result') %>"> -->
 
-  <div class="bet-item-main">
-    <div>
-      <span>straight wager</span>
-    </div>
+  <div class="bet-item-heading <%= bet.escape('result') %>">
+    <span>Bet#: <%= bet.escape('id') %></span>
   
-    <div>
-      $<%= parseFloat(bet.escape('amount')).toFixed(2) %>
-      to win
-      $<%= parseFloat(bet.escape('to_win')).toFixed(2) %>
-    </div>
-  
-    <div>
-      <%= bet.team.city %>
-      <%= bet.team.name %>
-    </div>
+    <% if (bet.escape('result') == 'pending'){ %>
+      <button
+        id="simulator"
+        class="pull-right btn-xs btn-primary">
+        simulate!
+      </button>
+    <% } %>
   </div>
+
+  <div class="bet-index-item list-group-item <%= bet.escape('result') %>">
+
+    <div class="bet-item-main">
+      <div>
+        <span class="bet-type">straight wager</span>
+      </div>
   
-  <!-- <div class="col-xs-6">
-    blank
-  </div> -->
-</div>
+      <div class="bet-amount-to-win">
+        Bet $ <%= parseFloat(bet.escape('amount')).toFixed(2) %>
+        to win
+        $ <%= parseFloat(bet.escape('to_win')).toFixed(2) %>
+      
+      
+        <% if (bet.escape('result') !== 'pending'){ %>
+        <div class="pull-right">
+          Result: <span class="result-<%= bet.escape('result') %>"><%= (bet.escape('result') == "winner") ? 'Wager Won' : 'Wager Lost' %></span>
+        </div>
+        <% } %>
+      
+      </div>
+  
+      <div class="details">
+        <div class="matchup">
+          <%= bet.attributes.team1.city %>
+          <%= bet.attributes.team1.name %> vs.
+          <%= bet.attributes.team2.city %>
+          <%= bet.attributes.team2.name %>
+        
+        
+        </div>
+  
+        <div class="the-bet">
+          <%= bet.team.city %>
+          <%= bet.team.name %>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<!-- </div> -->

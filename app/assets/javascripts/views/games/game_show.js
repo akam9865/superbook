@@ -35,6 +35,10 @@ Superbook.Views.GameShow = Backbone.CompositeView.extend({
 	calculateOdds: function (rawOdds) {
 		// rawOdds should be a real number between 0 and 1
 		
+    if (rawOdds === 0.5) {
+      return [["", "even"], ["", "even"]];
+    }
+    
 		var multiplier = (1 - rawOdds) / rawOdds;
 		
 		if (multiplier < 1) {

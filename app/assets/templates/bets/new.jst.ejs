@@ -41,40 +41,48 @@
     <form class="new-bet-form">
       
 
-        <input
-          type="hidden"
-          name="bet[game_id]"
-          value="<%= bet.game.attributes.id %>">
-      
-        <input
-          type="hidden"
-          name="bet[team_id]"
-          value="<%= bet.attributes.team.id %>">
-      
+      <input
+        type="hidden"
+        name="bet[game_id]"
+        value="<%= bet.game.attributes.id %>">
+    
+      <input
+        type="hidden"
+        name="bet[team_id]"
+        value="<%= bet.attributes.team.id %>">
+    
 
-              
-          <label for="amount">bet $</label>
-          <input 
-            id="amount"
-            name="bet[amount]"
-            class="form-control bet-input <%= bet.game.attributes.id %>"
-            type="text"
-            value="0.00">
-
-
-
-          <label for="win-amount">win $</label>
-          <input
-            class="form-control win-input <%= bet.game.attributes.id %>"
-            name="bet[to_win]"
-            type="text"
-            value="0.00">
           
+      <label for="amount">bet $</label>
+      <input 
+        id="amount"
+        name="bet[amount]"
+        class="form-control bet-input <%= bet.game.attributes.id %>"
+        type="text"
+        value="0.00">
+
+
+
+      <label for="win-amount">win $</label>
+      <input
+        id="win-amount"
+        class="form-control win-input <%= bet.game.attributes.id %>"
+        name="bet[to_win]"
+        type="text"
+        value="0.00">
+        
 
         
-  		</div>
-  		<button type="button" class="btn remove-bet">Remove Bet</button>
-  		<input type="submit" value="Place Bet" class="btn place btn-danger pull-right">
+
+  		<button
+        type="button"
+        class="btn remove-bet">Remove Bet</button>
+        
+  		<input
+        type="submit"
+        value="Place Bet"
+        class="btn place btn-danger pull-right">
+        
     </form>
     
   </div>
