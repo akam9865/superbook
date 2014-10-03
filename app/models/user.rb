@@ -29,6 +29,14 @@ class User < ActiveRecord::Base
     self.session_token
   end
   
+  def pending_wagers
+    sum = 0
+    self.bets.where(result: "pending").each do |bet|
+      sum += bet.amount
+    end
+    sum
+  end
+  
   private
   
   def ensure_session_token

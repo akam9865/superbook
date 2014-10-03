@@ -15,32 +15,116 @@
 	
 	
 	<div class="nav-bar main-nav">
-		
 		<ul class="nav nav-pills">
-		
-		
-		
+		  
+		  <li class="logo"><img src="http://i.imgur.com/kFNQYdU.png?1"></li>
+      
+      <li class="navbar-item"><a class="nav-link" href="#/sports/1">sports</a></li>
+      <li class="navbar-item"><a class="nav-link" href="#">casino</a></li>
+      <li class="navbar-item"><a class="nav-link" href="#">racebook</a></li>
+      <li class="navbar-item"><a class="nav-link" href="#">promos</a></li>
+      <li class="navbar-item"><a class="nav-link" href="#">my account</a></li>
+      <li class="navbar-item"><a class="nav-link" href="#">deposit</a></li>
+      <li class="navbar-item"><a class="nav-link" href="#">help</a></li>
 		
 		<% if signed_in? %>
-			<p class="navbar-text">user: <%= current_user.username %></p>
-			<p class="navbar-text">bankroll: <%= current_user.bankroll %></p>
+  
+        <li class="navbar-item dropdown pull-right">
+          <a class="user-in dropdown-toggle" data-toggle="dropdown" href="#">
+            <span class="glyphicon glyphicon-user in"></span>
+          </a>
+          
+          <ul class="dropdown-menu" role="menu">
+            <li><div class="acct-info">Account Info</div></li>
+            
+            <div class="drop-stuff">
+            <li>
+              Username: 
+              <div class="pull-right"><%= current_user.username %></div>
+            </li>
+            
+            <li class="msgs">
+              Messages: 
+              <div class="pull-right">
+                <span class="glyphicon glyphicon-envelope"></span>
+              </div>
+            </li>
+            
+            <li>
+              Cash Balance: 
+              <div class="pull-right">
+                $<%= number_with_precision(current_user.bankroll, precision: 2) %>
+                
+              </div>
+            </li>
+            
+            <li>
+              Pending Wagers: 
+              <div class="pull-right">
+                $<%= number_with_precision(current_user.pending_wagers, precision: 2) %>
+              </div>
+            </li>
+            
 
-			<li class="pull-right">
-        <%= link_to "Sign out", session_url, method: :delete %>
+            
+            
+            <li>
+              <button class="deposit-button btn btn-danger">DEPOSIT</button>
+            </li>
+            
+            
+            
+            <li><%= button_to "LOGOUT", session_url, method: :delete, class: "btn btn-primary logout-button" %></li>
+            </div>
+          </ul>
+        </li>
+        
+        
+      
+      
+      
+      <!-- <li class="pull-right"><a href="#/users/<%= current_user.id %>">my bets</a></li> -->
+      
+      
+
+      <li class="navbar-item pull-right">
+        <div class="name-and-bank">
+          <div><%= current_user.username %></div>
+          <div>
+            $<%= number_with_precision(current_user.bankroll, precision: 2) %>
+          </div>
+        </div>
       </li>
-      <li class="pull-right"><a href="#/sports">sports</a></li>
-      <li class="pull-right"><a href="#/users/<%= current_user.id %>">my bets</a></li>
+      
+      <li class="refresh-button pull-right"><span class="glyphicon glyphicon-refresh"></span></li>
 			
 		<% else %>
 		
-			<li><%= link_to "Sign In", new_session_url %></li>
-			<li><%= link_to "Sign Up", new_user_url %></li>
+      <!-- <li><%= link_to "Sign In", new_session_url %></li>
+      <li><%= link_to "Sign Up", new_user_url %></li> -->
+      
+      <li class="pull-right navbar-item">
+        <div class="login-button">
+          <a class="nav-link" href="/session/new">
+            <div class="login-icon"><span class="glyphicon glyphicon-user"></span></div>
+            <div class="login-text">LOGIN</div>
+          </a>
+        </div>
+      </li>
+      
+      <li class="pull-right navbar-item">
+        <div class="signup">
+          <a href="/users/new">
+            <div class="signup-icon"><span class="glyphicon glyphicon-edit"></span></div>
+            <div class="signup-text">JOIN NOW</div>
+          </a>
+        </div>
+      </li>
 
 		
 		<% end %>
 		
 
-		
 		
 		</ul>
 	</div>

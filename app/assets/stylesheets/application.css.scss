@@ -160,6 +160,7 @@ li.list-group-item {
 
 .main-nav {
   background: #FFFFFF;
+  margin-right: 25px;
 }
 
 footer {
@@ -173,4 +174,95 @@ footer {
 .footstuff {
   margin: 0 auto;
   width: 240px;
+}
+
+.navbar-item {
+  margin-top: 5px;
+}
+
+.nav-link {
+  color: #44474E;
+  text-transform: uppercase;
+  font-size: 10px;
+  margin-top: 3px;
+}
+
+.refresh-button {
+  margin: 25px 5px 0 0;
+}
+
+.name-and-bank {
+  margin-right: 5px;
+}
+
+.user-in {
+  color: #4D4D4D;
+  background: #EBEBEB;
+}
+
+.user-in:hover {
+  color: #404040;
+}
+
+.acct-info {
+  background: #2D3039;
+  color: white;
+  border-radius: 4px 4px 0 0;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+ul.dropdown-menu {
+  padding-top: 0;
+  width: 250px;
+}
+
+.deposit-button {
+  margin-top: 10px;
+  background: #E21E25;
+  color: white;
+  width: 100%;
+}
+
+.logout-button {
+  margin-top: 5px;
+  background: #323849;
+  color: white;
+  width: 100%;
+}
+
+.drop-stuff {
+  padding: 10px 8px 0 8px;
+}
+
+.msgs {
+  border-bottom: 1px solid #E3E3E3;
+}
+
+.signup-text {
+  font-size: 10px;
+  color: #B90108;
+}
+
+.login-text {
+  font-size: 10px;
+  color: #4D4D4D;
+}
+
+.signup-icon {
+  margin: 0 auto;
+  width: 12px;
+  font-size: 10pt;
+  color: #B90108;
+}
+
+.login-icon {
+  margin: 0 auto;
+  width: 14px;
+  font-size: 10pt;
+  color: #4D4D4D;
+}
+
+.signup {
+  margin-right: 10px;
 }
